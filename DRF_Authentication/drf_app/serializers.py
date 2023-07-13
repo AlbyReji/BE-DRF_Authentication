@@ -10,7 +10,7 @@ class UserRegisterSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ["username", "email","fname","lname", "password", "password2"]
+        fields = ["username", "email", "password", "password2"]
 
     def save(self):
         reg = User(
