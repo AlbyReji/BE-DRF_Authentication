@@ -10,12 +10,12 @@ class UserRegisterSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ["username", "email", "password", "password2"]
+        fields = ["username", "email","fname","lname", "password", "password2"]
 
     def save(self):
         reg = User(
-            username=self.validated_data['username'],
-            email=self.validated_data['email'],
+            username =self.validated_data['username'],
+            email = self.validated_data['email'],
         )
         password = self.validated_data['password']
         password2 = self.validated_data['password2']

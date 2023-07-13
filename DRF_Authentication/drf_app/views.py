@@ -8,16 +8,22 @@ from rest_framework.views import APIView
 from rest_framework.authtoken.models import Token
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
-from rest_framework import generics ,status
+from rest_framework import generics
 from rest_framework.exceptions import NotFound, PermissionDenied
+from rest_framework.generics import  RetrieveAPIView
+
 
 from .pagination import NumberPagination
 
 
-class PublicView(generics.ListCreateAPIView):
+class PublicView(generics.ListAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
     pagination_class = NumberPagination
+
+class BookView(generics.RetrieveAPIView):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
 
 
 

@@ -131,6 +131,11 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'drf_app.pagination.NumberPagination',
+    'PAGE_SIZE':5,
+}
+
 AUTH_USER_MODEL = 'drf_app.User'
 
 
@@ -147,7 +152,3 @@ REST_FRAMEWORK = {
 ]
 }
 
-REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'drf_app.pagination.NumberPagination',
-    'PAGE_SIZE':5,
-}
